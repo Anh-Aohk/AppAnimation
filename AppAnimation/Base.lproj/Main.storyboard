@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goodnight-image/goodnight1" translatesAutoresizingMaskIntoConstraints="NO" id="f4j-DY-lqf" userLabel="imgGoodnight">
+                                <rect key="frame" x="0.0" y="102" width="390" height="390"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="f4j-DY-lqf" secondAttribute="height" multiplier="1:1" id="hQ1-cJ-fZi"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U0J-Ez-Bv3">
+                                <rect key="frame" x="20" y="549.33333333333337" width="350" height="38.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcl-Q4-D1m" userLabel="btnToggleAnimation">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="38.333333333333336"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Animation"/>
+                                        <connections>
+                                            <action selector="toggleAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYL-gd-NpI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF6-RB-OGZ" userLabel="btnNextImage">
+                                        <rect key="frame" x="120" y="0.0" width="110" height="38.333333333333336"/>
+                                        <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                        <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Next image"/>
+                                        <connections>
+                                            <action selector="changeToNextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zGl-mg-eOw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcZ-5o-hBw" userLabel="btnReset">
+                                        <rect key="frame" x="240" y="0.0" width="110" height="38.333333333333336"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X50-zJ-Wqh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PsF-gW-ofR">
+                                <rect key="frame" x="173" y="645" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.1411764771" green="0.1686274707" blue="0.2117646933" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f4j-DY-lqf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="6i5-GE-08l"/>
+                            <constraint firstItem="f4j-DY-lqf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="JHN-y4-HT4"/>
+                            <constraint firstItem="U0J-Ez-Bv3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UT1-tI-Mak"/>
+                            <constraint firstItem="f4j-DY-lqf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uGe-3C-32N"/>
+                            <constraint firstItem="U0J-Ez-Bv3" firstAttribute="top" secondItem="f4j-DY-lqf" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="zMm-NK-vvS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnNextImage" destination="aF6-RB-OGZ" id="t7o-Q0-Ba2"/>
+                        <outlet property="btnToggleAnimation" destination="dcl-Q4-D1m" id="cbb-6O-QaG"/>
+                        <outlet property="imgGoodnight" destination="f4j-DY-lqf" id="Dej-gJ-IHd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-86.25954198473282" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="goodnight-image/goodnight1" width="480" height="480"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
